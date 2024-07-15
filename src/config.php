@@ -9,7 +9,6 @@ $user = $_ENV['DB_USER'];
 $pass = $_ENV['DB_PASS'];
 $charset = 'utf8mb4';
 
-// Connect to MySQL server (without specifying database)
 $dsn = "mysql:host=$host;charset=$charset";
 $options = [
     PDO::ATTR_ERRMODE            => PDO::ERRMODE_EXCEPTION,
