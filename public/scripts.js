@@ -27,7 +27,8 @@ function displayPost(post) {
     const feed = document.getElementById('feed');
     const postElement = document.createElement('div');
     postElement.className = 'post';
-    postElement.innerHTML = post.content.replace(/(http:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>');
+    postElement.innerHTML = post.content.replace(/(http:\/\/[^\s]+)/g, '<a href="$1" target="_blank">$1</a>') +
+        `<div class="click-count">Clicks: ${post.clicks}</div>`;
     feed.prepend(postElement);
 }
 

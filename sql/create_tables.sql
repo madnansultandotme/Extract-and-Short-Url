@@ -8,5 +8,6 @@ CREATE TABLE IF NOT EXISTS url_mappings (
     id INT AUTO_INCREMENT PRIMARY KEY,
     original_url TEXT NOT NULL,
     short_url VARCHAR(255) NOT NULL,
+    click_count INT DEFAULT 0,
     UNIQUE (short_url)
 );

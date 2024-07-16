@@ -32,8 +32,7 @@ function extractAndShortenUrls($content) {
     $pattern = '/https?:\/\/[^\s]+/';
     return preg_replace_callback($pattern, function($matches) {
         $shortUrl = getShortUrl($matches[0]);
-    //   here we can add any custom domain name
-        return "http:http://localhost/url-shortner/public/$shortUrl";
+        return "http://localhost/url-shortner/public/$shortUrl";
     }, $content);
 }
 
@@ -49,7 +48,8 @@ $stmt->execute([$shortenedContent]);
 $response = [
     "success" => true,
     "post" => [
-        "content" => $shortenedContent
+        "content" => $shortenedContent,
+        "clicks" => 0
     ]
 ];
 echo json_encode($response);
